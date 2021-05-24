@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="base::layout(~{::section})">
+<head>
+<meta charset="ISO-8859-1">
+<title>About</title>
+</head>
+<body>
+	<section>
+		<div class="content-section">
+        <form th:action="@{doupdate}" method="POST" enctype="multipart/form-data">
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Update Details</legend>
+				<div class="mb-3">
+					<label for="formGroupExampleInput" class="form-label">First Name</label>
+				    <input type="text" class="form-control" id="formGroupExampleInput" name="first_name" th:placeholder="${emp.first_name}">
+				</div>
+				<div class="mb-3">
+					<label for="formGroupExampleInput2" class="form-label">Last Name</label>
+				    <input type="text" class="form-control" id="formGroupExampleInput2" name="last_name" th:placeholder="${emp.last_name}">
+				</div>
+				<div class="mb-3">
+					<label for="formGroupExampleInput" class="form-label">Salary</label>
+				    <input type="nubmer" class="form-control" id="formGroupExampleInput" name="salary" th:placeholder="${emp.salary}">
+				</div>
+				<div class="mb-3">
+					<label for="formGroupExampleInput2" class="form-label">Department</label>
+				    <input type="text" class="form-control" id="formGroupExampleInput2" name="department" th:placeholder="${emp.department}">
+				</div>
+				<div class="mb-3">
+					<label for="formGroupExampleInput" class="form-label">Position</label>
+				    <input type="text" class="form-control" id="formGroupExampleInput" name="position" th:placeholder="${emp.position}">
+				</div>
+				<div class="mb-3">
+					<label for="formGroupExampleInput2" class="form-label">Contact Number</label>
+				    <input type="text" class="form-control" id="formGroupExampleInput2" name="contact_number" th:placeholder="${emp.contact_number}">
+				</div>
+				<div class="mb-3">
+					<label for="formGroupExampleInput2" class="form-label">Picture</label>
+				    <input type="file" class="form-control" id="formGroupExampleInput2" name="profilePicture" th:value="${emp.picture}">
+				</div>
+            </fieldset>
+            <div class="form-group">
+                <button class="btn btn-outline-info" type="submit">Submit</button>
+            </div>
+            <div class="border-top pt-3">
+                <small class="text-muted">
+                    Already Have An Account?<a class="ml-2" href="#">Sign In Here</a>
+                </small>
+            </div>
+        </form>
+    </div>
+	</section>
+</body>
+</html>

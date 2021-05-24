@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="base::layout(~{::section})">
+<head>
+<meta charset="ISO-8859-1">
+<title>Home</title>
+</head>
+<body>
+	<section>
+        <article class="media content-section" th:each="emp:${employees}">
+        <img class="rounded-circle article-img" th:src="@{'/image/'+${emp.picture}}">
+        <div class="media-body">
+            <h2 th:text="${emp.first_name+' '+emp.last_name}"></h2>
+             <p class="article-content">Department <small th:text="${emp.department}"></small></p>
+        </div>
+        <a class="btn btn-outline-info" th:href="@{'/profile/'+${emp.email_address}}">Update</a>
+    </article>
+	</section>
+</body>
+</html>

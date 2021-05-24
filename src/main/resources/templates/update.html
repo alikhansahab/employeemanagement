@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="base::layout(~{::section})">
+<head>
+<meta charset="ISO-8859-1">
+<title>About</title>
+</head>
+<body>
+	<section>
+		<div class="content-section">
+        <form th:action="@{updateprofile}" method="POST" enctype="multipart/form-data">
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Update Details</legend>
+				<div class="mb-3">
+					<label for="formGroupExampleInput" class="form-label">First Name</label>
+				    <input type="text" class="form-control" id="formGroupExampleInput" name="first_name" th:value="${emp.first_name}">
+				</div>
+				<div class="mb-3">
+					<label for="formGroupExampleInput2" class="form-label">Last Name</label>
+				    <input type="text" class="form-control" id="formGroupExampleInput2" name="last_name" th:value="${emp.last_name}">
+				</div>
+				<div class="mb-3">
+					<label for="formGroupExampleInput" class="form-label">Salary</label>
+				    <input type="nubmer" class="form-control" id="formGroupExampleInput" name="salary" th:value="${emp.salary}">
+				</div>
+				<div class="mb-3">
+					<label for="formGroupExampleInput2" class="form-label">Department</label>
+				    <input type="text" class="form-control" id="formGroupExampleInput2" name="department" th:value="${emp.department}">
+				</div>
+				<div class="mb-3">
+					<label for="formGroupExampleInput" class="form-label">Position</label>
+				    <input type="text" class="form-control" id="formGroupExampleInput" name="position" th:value="${emp.position}">
+				</div>
+				<div class="mb-3">
+					<label for="formGroupExampleInput2" class="form-label">Contact Number</label>
+				    <input type="text" class="form-control" id="formGroupExampleInput2" name="contact_number" th:value="${emp.contact_number}">
+				</div>
+				<div class="mb-3">
+					<label for="formGroupExampleInput2" class="form-label">Picture</label>
+				    <input type="file" class="form-control" id="formGroupExampleInput2" name="profilePicture" th:value="${emp.picture}">
+				</div>
+            </fieldset>
+            <div class="form-group">
+                <button class="btn btn-outline-info" type="submit">Submit</button>
+                 <th><a class="btn btn-outline-danger" th:href="@{'/delete/'+${emp.email_address}}">Delete</a></th>
+            </div>
+        </form>
+    </div>
+	</section>
+</body>
+</html>

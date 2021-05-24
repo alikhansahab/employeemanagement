@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="base::layout(~{::section})">
+<head>
+<meta charset="ISO-8859-1">
+<title>About</title>
+</head>
+<body>
+	<section>
+		<div class="content-section">
+        <form th:action="@{doregister}" method="POST">
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Register Here</legend>
+				  <div class="mb-3">
+				    <label for="exampleInputEmail1" class="form-label">Email address</label>
+				    <input type="email" class="form-control" id="exampleInputEmail1" name="email_address" th:value="${emp.email_address}" aria-describedby="emailHelp">
+				  </div>
+				  <div class="mb-3">
+				    <label for="exampleInputPassword1" class="form-label">Password</label>
+				    <input type="password" class="form-control" id="exampleInputPassword1" name="password">
+				  </div>
+				   <div class="mb-3">
+				    <label for="exampleInputPassword1" class="form-label">Confirm Password</label>
+				    <input type="password" name="confirmpassword" class="form-control" id="exampleInputPassword1">
+				  </div>
+            </fieldset>
+            <div class="form-group">
+                <button class="btn btn-outline-info" type="submit">Submit</button>
+            </div>
+            <div class="border-top pt-3">
+                <small class="text-muted">
+                    Already Have An Account?<a class="ml-2" th:href="@{/login}">Sign In Here</a>
+                </small>
+            </div>
+        </form>
+    </div>
+	</section>
+</body>
+</html>
